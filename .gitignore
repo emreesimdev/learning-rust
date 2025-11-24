@@ -1,0 +1,5 @@
+# Ignore build artifacts in all subdirectories
+**/target/
+
+# Ignore backup files if any
+**/*.rs.bk
