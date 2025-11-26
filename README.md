@@ -6,20 +6,42 @@ This repository documents my progress in learning the Rust programming language.
 
 Each project is organized into its own directory for clarity.
 
-- **01_hello_world**: Basic setup and first Rust program using Cargo.
+- **01_hello_world**
+  - Basic setup and first Rust program using Cargo.
+- **02_basic_types**
+  - Introduction to scalar types: Integers (`i32`), Floats (`f64`), Booleans, and Characters.
+  - Understanding variable mutability with `mut`.
+- **03_math_operations**
+
+  - Arithmetic operations and mathematical logic.
+  - Understanding **Integer Division** vs Float Division.
+  - **Type Casting:** Converting types using the `as` keyword.
+
+- **04_control_flow**
+
+  - Decision making with `if`, `else if`, and `else`.
+  - Using `if` as an expression in `let` statements (Rust specific feature).
+  - Managing **Multiple Binaries** in `src/bin` (Scenarios: Exam Pass, Savings Goal, Game Store).
+
+- **05_loops**
+  - Mastering iteration logic: `loop`, `while`, and `for`.
+  - Using range syntax (`..` and `..=`).
+  - Real-world scenarios: Server Retry, Battery Life simulation, and NFT Minting logic.
 
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
 - Build CLI tools and system utilities.
 - Explore Web3 and blockchain development with Rust.
+- **Long-term Vision:** Full Stack Development + Rust + Web3 integration.
 
 ## Tools
 
 - **Language:** Rust
 - **Package Manager:** Cargo
 - **IDE:** VS Code
+- **VCS:** Git & GitHub
 
 ---
 
-Created by Emre Esim
+Created by **Emre Esim**
