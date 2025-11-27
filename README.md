@@ -29,7 +29,7 @@ Each project is organized into its own directory for clarity.
   - Using range syntax (`..` and `..=`).
   - Real-world scenarios: Server Retry, Battery Life simulation, and NFT Minting logic.
 
-  - **06_user_input**
+- **06_user_input**
   - Handling Standard Input (`std::io`).
   - The Data Transformation Pipeline: `read_line` -> `trim()` -> `parse()`.
   - Converting Strings to Integers (`i32`) and Floats (`f64`).
