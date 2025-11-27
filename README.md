@@ -24,9 +24,16 @@ Each project is organized into its own directory for clarity.
   - Managing **Multiple Binaries** in `src/bin` (Scenarios: Exam Pass, Savings Goal, Game Store).
 
 - **05_loops**
+
   - Mastering iteration logic: `loop`, `while`, and `for`.
   - Using range syntax (`..` and `..=`).
   - Real-world scenarios: Server Retry, Battery Life simulation, and NFT Minting logic.
+
+  - **06_user_input**
+  - Handling Standard Input (`std::io`).
+  - The Data Transformation Pipeline: `read_line` -> `trim()` -> `parse()`.
+  - Converting Strings to Integers (`i32`) and Floats (`f64`).
+  - **Real World Scenario:** Logistics Weight Checker logic with price calculation.
 
 ## Goals
 
