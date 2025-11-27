@@ -30,10 +30,17 @@ Each project is organized into its own directory for clarity.
   - Real-world scenarios: Server Retry, Battery Life simulation, and NFT Minting logic.
 
 - **06_user_input**
+
   - Handling Standard Input (`std::io`).
   - The Data Transformation Pipeline: `read_line` -> `trim()` -> `parse()`.
   - Converting Strings to Integers (`i32`) and Floats (`f64`).
   - **Real World Scenario:** Logistics Weight Checker logic with price calculation.
+
+- **07_guessing_game** (LEVEL 1 FINAL PROJECT)
+  - Implemented a complete CLI game loop.
+  - Used external crate `rand` for random number generation.
+  - Combined `loop`, user input, type parsing, and conditional logic (`if/else`).
+  - **Status:** Functional & Playable.
 
 ## Goals
 
