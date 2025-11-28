@@ -36,12 +36,19 @@ Each project is organized into its own directory for clarity.
   - Converting Strings to Integers (`i32`) and Floats (`f64`).
   - **Real World Scenario:** Logistics Weight Checker logic with price calculation.
 
-- **07_guessing_game** (LEVEL 1 FINAL PROJECT)
+- **07_guessing_game**
+
   - Implemented a complete CLI game loop.
   - Used external crate `rand` for random number generation.
   - Combined `loop`, user input, type parsing, and conditional logic (`if/else`).
   - **Error Handling:** Replaced `expect` with `match` to handle invalid inputs gracefully (Crash-proof).
   - **Status:** Functional & Playable.
+
+- **08_unit_converter**
+  - Built a CLI tool for temperature conversion (Celsius <-> Fahrenheit).
+  - Implemented mathematical formulas using `f64` precision.
+  - Used `loop` for continuous operation and specific `break` points.
+  - **Logic:** Menu selection handling and input parsing with safety checks (`match`).
 
 ## Goals
 
