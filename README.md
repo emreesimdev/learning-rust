@@ -40,6 +40,7 @@ Each project is organized into its own directory for clarity.
   - Implemented a complete CLI game loop.
   - Used external crate `rand` for random number generation.
   - Combined `loop`, user input, type parsing, and conditional logic (`if/else`).
+  - **Error Handling:** Replaced `expect` with `match` to handle invalid inputs gracefully (Crash-proof).
   - **Status:** Functional & Playable.
 
 ## Goals

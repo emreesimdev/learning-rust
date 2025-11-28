@@ -13,7 +13,10 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
-        let number_guess: i32 = guess.trim().parse().expect("Invalid number");
+        let number_guess: i32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         if number_guess < secret_number {
             println!("Too small!");
