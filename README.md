@@ -45,10 +45,17 @@ Each project is organized into its own directory for clarity.
   - **Status:** Functional & Playable.
 
 - **08_unit_converter**
+
   - Built a CLI tool for temperature conversion (Celsius <-> Fahrenheit).
   - Implemented mathematical formulas using `f64` precision.
   - Used `loop` for continuous operation and specific `break` points.
   - **Logic:** Menu selection handling and input parsing with safety checks (`match`).
+
+- **09_atm_simulator** (CAPSTONE PROJECT - MODULE 1)
+  - Developed a persistent CLI-based financial transaction simulation.
+  - **Core Concepts:** State persistence, variable scoping, and input validation pipelines.
+  - Implemented business logic for deposits, withdrawals, and insufficient fund checks.
+  - Utilized compound assignment operators and infinite loops for continuous runtime.
 
 ## Goals
 
