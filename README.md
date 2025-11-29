@@ -7,10 +7,14 @@ This repository documents my progress in learning the Rust programming language.
 Each project is organized into its own directory for clarity.
 
 - **01_hello_world**
+
   - Basic setup and first Rust program using Cargo.
+
 - **02_basic_types**
+
   - Introduction to scalar types: Integers (`i32`), Floats (`f64`), Booleans, and Characters.
   - Understanding variable mutability with `mut`.
+
 - **03_math_operations**
 
   - Arithmetic operations and mathematical logic.
@@ -52,10 +56,20 @@ Each project is organized into its own directory for clarity.
   - **Logic:** Menu selection handling and input parsing with safety checks (`match`).
 
 - **09_atm_simulator** (CAPSTONE PROJECT - MODULE 1)
+
   - Developed a persistent CLI-based financial transaction simulation.
   - **Core Concepts:** State persistence, variable scoping, and input validation pipelines.
   - Implemented business logic for deposits, withdrawals, and insufficient fund checks.
   - Utilized compound assignment operators and infinite loops for continuous runtime.
+
+- **10_dungeon_battle** (LOGIC CHALLENGE)
+
+  - Developed a turn-based combat simulation (RPG style).
+  - **Key Features:**
+    - **Multi-State Management:** Tracking player and enemy health simultaneously.
+    - **RNG Implementation:** Randomized damage, healing, and escape mechanics.
+    - **Game Loop:** Implemented a sequential turn system (Player Turn -> Enemy Turn).
+    - **Logic Gates:** Handling death conditions, health caps, and successful escapes properly.
 
 ## Goals
 
