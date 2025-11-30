@@ -72,6 +72,7 @@ Each project is organized into its own directory for clarity.
     - **Logic Gates:** Handling death conditions, health caps, and successful escapes properly.
 
 - **11_mars_survival** (STRATEGY SIMULATION)
+
   - Developed a resource management survival game engine.
   - **Key Features:**
     - **Resource Logic:** Balancing Energy, Oxygen, and Water variables dynamically.
@@ -79,11 +80,21 @@ Each project is organized into its own directory for clarity.
     - **Error Correction:** Implemented logic to prevent state progression (day skip) on invalid inputs.
     - **RNG Events:** Random disaster generation (Storms, Radiation) affecting game state.
 
+- **12_warehouse_manager** (LOGISTICS SIMULATION)
+
+  - Developed a warehouse inventory management system.
+  - **Key Features:**
+    - **Capacity Management:** Logic gates to prevent overstocking (`stock <= capacity`).
+    - **Financial Logic:** Profit calculation using type casting (`i32` to `f64`) and margin application.
+    - **State Persistence:** Tracking stock levels and cash flow across business cycles.
+    - **Constants:** Utilized `const` for defining immutable constraints like Warehouse Capacity.
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
 - Build CLI tools and system utilities.
 - Explore Web3 and blockchain development with Rust.
+- Develop high-performance Backend APIs.
 - **Long-term Vision:** Full Stack Development + Rust + Web3 integration.
 
 ## Tools
