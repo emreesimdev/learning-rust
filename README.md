@@ -71,6 +71,14 @@ Each project is organized into its own directory for clarity.
     - **Game Loop:** Implemented a sequential turn system (Player Turn -> Enemy Turn).
     - **Logic Gates:** Handling death conditions, health caps, and successful escapes properly.
 
+- **11_mars_survival** (STRATEGY SIMULATION)
+  - Developed a resource management survival game engine.
+  - **Key Features:**
+    - **Resource Logic:** Balancing Energy, Oxygen, and Water variables dynamically.
+    - **Control Flow:** Utilized `match` expression for cleaner and safer menu handling.
+    - **Error Correction:** Implemented logic to prevent state progression (day skip) on invalid inputs.
+    - **RNG Events:** Random disaster generation (Storms, Radiation) affecting game state.
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
