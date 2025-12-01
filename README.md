@@ -89,6 +89,15 @@ Each project is organized into its own directory for clarity.
     - **State Persistence:** Tracking stock levels and cash flow across business cycles.
     - **Constants:** Utilized `const` for defining immutable constraints like Warehouse Capacity.
 
+- **13_crypto_trader** (ASSET MANAGEMENT SIMULATION)
+
+  - Developed a financial trading bot simulation with real-time volatility.
+  - **Key Features:**
+    - **Portfolio Logic:** Tracking two different asset types (Fiat/Crypto) simultaneously.
+    - **Market Volatility:** Simulating price fluctuations using `rand` range generation.
+    - **Wealth Calculation:** Dynamic calculation of total net worth based on current market price.
+    - **Win Condition:** Implemented a profit target threshold (`>=`) logic.
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
