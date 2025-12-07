@@ -98,6 +98,14 @@ Each project is organized into its own directory for clarity.
     - **Wealth Calculation:** Dynamic calculation of total net worth based on current market price.
     - **Win Condition:** Implemented a profit target threshold (`>=`) logic.
 
+- **14_structs_and_enums**
+
+  - Introduction to **Data Modeling**: Defining custom types using `struct` (Player, Car).
+  - Understanding **Enumerations**: Restricting options using `enum` (Direction, Color).
+  - **Pattern Matching:** Using `match` to handle Enum variants logically.
+  - **Debug Printing:** Learned `#[derive(Debug)]` and `{:?}` syntax for displaying custom types.
+  - **Multi-Binary:** Created a secondary simulation (`garage.rs`) to reinforce concepts.    
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
