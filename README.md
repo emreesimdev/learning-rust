@@ -106,6 +106,13 @@ Each project is organized into its own directory for clarity.
   - **Debug Printing:** Learned `#[derive(Debug)]` and `{:?}` syntax for displaying custom types.
   - **Multi-Binary:** Created a secondary simulation (`garage.rs`) to reinforce concepts.    
 
+- **15_vectors_intro**
+
+  - Introduction to **Dynamic Collections**: Understanding `Vec<T>` vs Fixed Arrays.
+  - **Memory Management:** Learned that Vectors store data in the **Heap** (Dynamic size).
+  - **Initialization:** Using `Vec::new()` and the convenient `vec![]` macro.
+  - **Basic Operations:** Adding data (`push`), removing data (`pop`), and indexing.  
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
