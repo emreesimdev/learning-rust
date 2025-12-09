@@ -113,6 +113,13 @@ Each project is organized into its own directory for clarity.
   - **Initialization:** Using `Vec::new()` and the convenient `vec![]` macro.
   - **Basic Operations:** Adding data (`push`), removing data (`pop`), and indexing.  
 
+- **16_vectors_deep_dive**
+
+  - **Advanced Iteration:** Looping through vectors using references (`&vec`) to preserve ownership.
+  - **Mutable Access:** Modifying elements in-place using `&mut` and dereferencing (`*`) within loops.
+  - **Safe Indexing:** Replaced panic-prone `[]` syntax with `.get()`, handling `Option<T>` results.
+  - **Flow Control:** Used `match` to safely handle `pop()` operations on potentially empty vectors (`Some` vs `None`).  
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
