@@ -120,6 +120,13 @@ Each project is organized into its own directory for clarity.
   - **Safe Indexing:** Replaced panic-prone `[]` syntax with `.get()`, handling `Option<T>` results.
   - **Flow Control:** Used `match` to safely handle `pop()` operations on potentially empty vectors (`Some` vs `None`).  
 
+- **17_personal_library**
+
+  - **Structs & Vectors:** Combined custom data structures (`Book`) with dynamic collections (`Vec<Book>`).
+  - **CRUD Operations:** Implemented Create (Add), Read (List/Search), and Delete logic.
+  - **Interactive CLI:** Built loops for continuous user input until exit commands ('q' or 'e') are given.
+  - **Data Safety:** Used `usize` for index parsing and added bounds checking (`index < len`) to prevent crashes during deletion.  
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
