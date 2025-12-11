@@ -127,6 +127,13 @@ Each project is organized into its own directory for clarity.
   - **Interactive CLI:** Built loops for continuous user input until exit commands ('q' or 'e') are given.
   - **Data Safety:** Used `usize` for index parsing and added bounds checking (`index < len`) to prevent crashes during deletion.  
 
+- **18_order_manager**
+
+  - **Enums & Match:** Managed fixed states (`New`, `Shipped` etc.) using `enum` to prevent invalid data.
+  - **Structs with Enums:** Embedded Enums inside Structs (`Order`).
+  - **Logic & State:** Implemented logic to update order status dynamically by ID.
+  - **Refactoring (DRY):** Created a custom helper function `get_input()` to handle user I/O cleanly and avoid code repetition.
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
