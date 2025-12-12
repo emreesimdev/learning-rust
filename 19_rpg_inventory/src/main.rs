@@ -72,10 +72,10 @@ fn main() {
             "2" => {
                 // View Inventory
                 println!("---YOUR INVENTORY---");
-                for backpack in &inventory {
-                    println!("Name: {}",backpack.name);
-                    println!("count: {}", backpack.count);
-                    println!("Item type: {:?}", backpack.item_type);
+                for (index, item) in inventory.iter().enumerate() {
+                    println!("{}. Name: {}", index, item.name);
+                    println!("count: {}", item.count);
+                    println!("Item type: {:?}", item.item_type);
                     println!("--------------------");
             }
         }
