@@ -134,6 +134,12 @@ Each project is organized into its own directory for clarity.
   - **Logic & State:** Implemented logic to update order status dynamically by ID.
   - **Refactoring (DRY):** Created a custom helper function `get_input()` to handle user I/O cleanly and avoid code repetition.
 
+- **19_rpg_inventory**
+  - **Complex Data Structures:** Integrated `Enum` (`ItemType`) within `Struct` (`Item`) stored in a `Vec` to model game assets.
+  - **State Management Logic:** Implemented a full cycle of item management: Add, View, Use (Decrease/Remove), and Quit.
+  - **Input Parsing:** Handled String-to-Enum conversion logic manually during item creation using conditional logic.
+  - **Clean Architecture:** Reused the `get_input()` helper function for a modular and readable codebase, reinforcing the DRY principle.
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
