@@ -140,6 +140,9 @@ Each project is organized into its own directory for clarity.
   - **Input Parsing:** Handled String-to-Enum conversion logic manually during item creation using conditional logic.
   - **Clean Architecture:** Reused the `get_input()` helper function for a modular and readable codebase, reinforcing the DRY principle.
 
+- **20_labyrinth**
+ - **WORKING IN PROGRESS**
+
 ## Goals
 
 - Master memory safety concepts (Ownership, Borrowing).
