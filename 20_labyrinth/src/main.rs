@@ -3,16 +3,20 @@ struct Player {
     name: String,
 }
 
+use std::io; 
+
 fn main() {
 
-    let mut map = vec!['.', '#', '.', '.', '.', '.', '.', '.', '.', '.',];
+    let map = vec!['.', '#', '.', '.', '.', '.', '.', '.', '.', '.',];
 
     let mut player = Player {
         position: 4,
         name: "Emre".to_string(),
     };
     
-    for (i, cell) in map.iter().enumerate() {
+    loop {
+
+        for (i, cell) in map.iter().enumerate() {
         if i == player.position {
             print!("P");
         } else {
@@ -20,9 +24,9 @@ fn main() {
         }
     }
 
-    println!();
+        println!();
+        println!("-----------------------");
 
-    loop {
         println!("Press 'a' to move left.");
         println!("Press 'd to move right.");
         println!("Press 'q' for quit.");
@@ -31,11 +35,19 @@ fn main() {
 
         match choice.as_str() {
             "a" => {
-                player.position -= 1;
+                if  player.position > 0 {
+                    player.position -= 1;
+                }
             }
 
             "d" => {
-                player.position += 1;
+                if player.position < map.len() - 1 {
+                    player.position += 1;
+                }
+                if player.position == map.len() -1 {
+                    println!("You managed to escape the labyrinth.");
+                    break;
+                }
             }
 
             "q" => {
