@@ -141,6 +141,7 @@ Each project is organized into its own directory for clarity.
   - **Clean Architecture:** Reused the `get_input()` helper function for a modular and readable codebase, reinforcing the DRY principle.
 
 - **20_labyrinth**
+ - 1D core mechanics completed.
  - **WORKING IN PROGRESS**
 
 ## Goals

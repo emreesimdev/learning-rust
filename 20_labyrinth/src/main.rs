@@ -1,9 +1,6 @@
 struct Player {
     position: usize,
-    name: String,
 }
-
-use std::io; 
 
 fn main() {
 
@@ -11,7 +8,6 @@ fn main() {
 
     let mut player = Player {
         position: 4,
-        name: "Emre".to_string(),
     };
     
     loop {
@@ -28,7 +24,7 @@ fn main() {
         println!("-----------------------");
 
         println!("Press 'a' to move left.");
-        println!("Press 'd to move right.");
+        println!("Press 'd' to move right.");
         println!("Press 'q' for quit.");
 
         let choice = get_input("What is your move?");
@@ -36,17 +32,26 @@ fn main() {
         match choice.as_str() {
             "a" => {
                 if  player.position > 0 {
-                    player.position -= 1;
-                }
+                   let target = player.position - 1;
+
+                   if map[target] != '#' {
+                       player.position = target;
+                   } else {
+                       println!("You hit a wall");
+                   }
+                } 
             }
 
             "d" => {
-                if player.position < map.len() - 1 {
-                    player.position += 1;
-                }
-                if player.position == map.len() -1 {
-                    println!("You managed to escape the labyrinth.");
-                    break;
+                let target = player.position + 1;
+
+                if target < map.len() {
+                    
+                    if map[target] != '#'  {
+                        player.position = target;
+                    } else {
+                        println!("You hit a wall!");
+                    }
                 }
             }
 
@@ -58,6 +63,11 @@ fn main() {
             _ => {
                 println!("Invalid choice!");
             }
+        }
+
+        if player.position == map.len() - 1 {
+            println!("You managed to escape the labyrinth");
+            break;
         }
     }
 }
