@@ -142,7 +142,7 @@ Each project is organized into its own directory for clarity.
 
 - **20_labyrinth**
  - 1D core mechanics completed.
- - **WORKING IN PROGRESS**
+ - **WORK IN PROGRESS**
 
 ## Goals
 
