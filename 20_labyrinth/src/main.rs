@@ -1,13 +1,41 @@
+#[derive(PartialEq, Clone)]
+enum Tile {
+    Wall,
+    Empty,
+    Monster,
+    Weapon,
+}
+
+enum Direction {
+    Left,
+    Right,
+}
+
 struct Player {
     position: usize,
+    health_point: i32,
+    has_weapon: bool,
 }
 
 fn main() {
 
-    let map = vec!['.', '#', '.', '.', '.', '.', '.', '.', '.', '.',];
+    let mut map = vec![
+        Tile::Wall,
+        Tile::Weapon,
+        Tile::Empty,
+        Tile::Empty,
+        Tile::Empty,
+        Tile::Empty,
+        Tile::Empty,
+        Tile::Empty,
+        Tile::Monster,
+        Tile::Empty,
+    ];
 
     let mut player = Player {
         position: 4,
+        health_point: 3,
+        has_weapon: false,
     };
     
     loop {
@@ -16,8 +44,13 @@ fn main() {
         if i == player.position {
             print!("P");
         } else {
-            print!("{}", cell);
-        }
+         match cell {
+            Tile::Wall => print!("#"),
+            Tile::Empty => print!("."),
+            Tile::Weapon => print!("W"),
+            Tile::Monster => print!("M"),
+        };  
+    }    
     }
 
         println!();
@@ -34,7 +67,7 @@ fn main() {
                 if  player.position > 0 {
                    let target = player.position - 1;
 
-                   if map[target] != '#' {
+                   if map[target] != Tile::Wall {
                        player.position = target;
                    } else {
                        println!("You hit a wall");
@@ -47,7 +80,7 @@ fn main() {
 
                 if target < map.len() {
                     
-                    if map[target] != '#'  {
+                    if map[target] != Tile::Wall  {
                         player.position = target;
                     } else {
                         println!("You hit a wall!");
