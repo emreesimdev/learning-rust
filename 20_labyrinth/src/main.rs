@@ -62,48 +62,75 @@ fn main() {
 
         let choice = get_input("What is your move?");
 
-        match choice.as_str() {
-            "a" => {
-                if  player.position > 0 {
-                   let target = player.position - 1;
-
-                   if map[target] != Tile::Wall {
-                       player.position = target;
-                   } else {
-                       println!("You hit a wall");
-                   }
-                } 
-            }
-
-            "d" => {
-                let target = player.position + 1;
-
-                if target < map.len() {
-                    
-                    if map[target] != Tile::Wall  {
-                        player.position = target;
-                    } else {
-                        println!("You hit a wall!");
-                    }
-                }
-            }
-
-            "q" => {
-                println!("Goodbye");
-                break;
-            }
-
-            _ => {
-                println!("Invalid choice!");
-            }
-        }
-
-        if player.position == map.len() - 1 {
-            println!("You managed to escape the labyrinth");
+        if choice == "q" {
+            println!("Goodbye");
             break;
         }
+
+    let direction =  match choice.as_str() {
+
+        "a" => Direction::Left,
+        "d" => Direction::Right,
+        _ => { 
+            println!("Invalid choice!");
+            continue;
+        },
+    };
+
+    let target = match direction {
+        Direction::Left => {
+            if player.position > 0 {
+                player.position -1
+            } else {
+                continue;
+            }
+        },
+        Direction::Right => {
+            if player.position < map.len() - 1 {
+                player.position + 1
+            } else {
+                continue;
+            }
+        },
+    };
+
+    match map[target] {
+        Tile::Empty => {
+            player.position = target;
+        },
+        Tile::Wall => {
+            println!("You hit the wall!");
+        },
+        Tile::Weapon => {
+            player.has_weapon = true;
+            map[target] = Tile::Empty;
+            player.position = target;
+        },
+        Tile::Monster => {
+            if player.has_weapon {
+                println!("You slain The Monster!");
+                map[target] = Tile::Empty;
+                player.position = target;
+            } else {
+                player.health_point -= 1;
+                println!("You've taken damage!");
+            }
+        },
+    };
+
+    if player.health_point <= 0 {
+        println!("Game Over! You died.");
+        break;
     }
-}
+
+    if player.position == map.len() -1 {
+        println!("You managed to escape the labyrinth!");
+        break;
+    }
+
+    }
+
+}    
 
 fn get_input(prompt: &str) -> String {
     println!("{}", prompt);
