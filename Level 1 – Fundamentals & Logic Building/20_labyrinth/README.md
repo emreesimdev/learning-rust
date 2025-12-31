@@ -25,6 +25,13 @@ Instead of feeling bad about deleting my code, I felt good because I understood 
 
 It was a painful journey at times, but it was absolutely worth it. I am happy to have completed it and proud to have taken my Rust skills to the next level.
 
+## Key Concepts Applied
+
+* **2D Vectors:** Used `Vec<Vec<Tile>>` to create a grid-based map system.
+* **Structs & Enums:** Designed `Player`, `Tile`, and `Direction` types to manage game state cleanly.
+* **Pattern Matching:** Used `match` for handling movement logic, collision detection, and tile interactions.
+* **Game Loop:** Implemented a continuous loop with break conditions for Win/Loss states.
+
 ---
 
 ## How to Play
