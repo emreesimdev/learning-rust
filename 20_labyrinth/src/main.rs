@@ -4,61 +4,77 @@ enum Tile {
     Empty,
     Monster,
     Weapon,
+    Trap,
 }
 
 enum Direction {
     Left,
     Right,
+    Up,
+    Down,
 }
 
 struct Player {
-    position: usize,
+    x: usize,
+    y: usize,
     health_point: i32,
     has_weapon: bool,
 }
 
 fn main() {
 
+    // 10x10 Labyrinth Map
+    // 0: Wall, 1: Empty, 2: Monster, 3: Weapon, 4: Trap
     let mut map = vec![
-        Tile::Wall,
-        Tile::Weapon,
-        Tile::Empty,
-        Tile::Empty,
-        Tile::Empty,
-        Tile::Empty,
-        Tile::Empty,
-        Tile::Empty,
-        Tile::Monster,
-        Tile::Empty,
+        vec![Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall],
+        vec![Tile::Wall, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Wall, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Monster, Tile::Wall],
+        vec![Tile::Wall, Tile::Empty, Tile::Wall, Tile::Empty, Tile::Wall, Tile::Empty, Tile::Wall, Tile::Wall, Tile::Empty, Tile::Wall],
+        vec![Tile::Wall, Tile::Empty, Tile::Wall, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Wall],
+        vec![Tile::Wall, Tile::Empty, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Monster, Tile::Wall, Tile::Empty, Tile::Wall],
+        vec![Tile::Wall, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Trap, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Wall], 
+        vec![Tile::Wall, Tile::Empty, Tile::Wall, Tile::Weapon, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Empty, Tile::Wall],
+        vec![Tile::Wall, Tile::Empty, Tile::Wall, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Monster, Tile::Empty, Tile::Wall], 
+        vec![Tile::Wall, Tile::Empty, Tile::Empty, Tile::Empty, Tile::Wall, Tile::Empty, Tile::Empty, Tile::Trap, Tile::Empty, Tile::Empty],
+        vec![Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall, Tile::Wall], 
     ];
 
+    // Starting position of the player (1,1)
     let mut player = Player {
-        position: 4,
+        x: 1,
+        y: 1,
         health_point: 3,
         has_weapon: false,
     };
     
+    // Game Loop
     loop {
+        // Draw the map row by row 
+        for (y, row) in map.iter().enumerate() {
+            for (x, cell) in row.iter().enumerate() {
+                // Check if the player is in this cell
+                if x == player.x && y == player.y  {
+                    print!("P");
+                } else {
+                    // Draw the tile based on its type
+                    match cell {
+                        Tile::Wall => print!("#"),
+                        Tile::Empty => print!("."),
+                        Tile::Weapon => print!("W"),
+                        Tile::Monster => print!("M"),
+                        Tile::Trap => print!("T"),
+                    }
+                }
+            }
+            // Move to the next line after drawing a row
+            println!();
+        }
 
-        for (i, cell) in map.iter().enumerate() {
-        if i == player.position {
-            print!("P");
-        } else {
-         match cell {
-            Tile::Wall => print!("#"),
-            Tile::Empty => print!("."),
-            Tile::Weapon => print!("W"),
-            Tile::Monster => print!("M"),
-        };  
-    }    
-    }
-
+        // Status bar
         println!();
         println!("-----------------------");
-
-        println!("Press 'a' to move left.");
-        println!("Press 'd' to move right.");
-        println!("Press 'q' for quit.");
+        println!("HP: {} | Weapon {}", player.health_point, player.has_weapon);
+        println!("Press 'a' (Left), 'd' (Right), 'w' (Up), 's' (Down)");
+        println!("Press 'q' to quit.");
 
         let choice = get_input("What is your move?");
 
@@ -67,71 +83,82 @@ fn main() {
             break;
         }
 
-    let direction =  match choice.as_str() {
+        // Determine direction based on input
+        let direction =  match choice.as_str() {
 
         "a" => Direction::Left,
         "d" => Direction::Right,
+        "w" => Direction::Up,
+        "s" => Direction::Down,
         _ => { 
             println!("Invalid choice!");
             continue;
-        },
-    };
+            },
+        };
 
-    let target = match direction {
-        Direction::Left => {
-            if player.position > 0 {
-                player.position -1
-            } else {
-                continue;
-            }
-        },
-        Direction::Right => {
-            if player.position < map.len() - 1 {
-                player.position + 1
-            } else {
-                continue;
-            }
-        },
-    };
+        // Calculate target cordinates based on direction
+        let mut target_x = player.x;
+        let mut target_y = player.y;
 
-    match map[target] {
+        match direction {
+        Direction::Left => target_x -= 1,
+        Direction::Right => target_x += 1,
+        Direction::Up => target_y -= 1,
+        Direction::Down => target_y += 1,
+        }
+
+        // Interection Logic: What is on the target tile?
+        match map[target_y][target_x] {
         Tile::Empty => {
-            player.position = target;
+            player.x = target_x;
+            player.y = target_y;
         },
         Tile::Wall => {
             println!("You hit the wall!");
         },
         Tile::Weapon => {
             player.has_weapon = true;
-            map[target] = Tile::Empty;
-            player.position = target;
+            map[target_y][target_x] = Tile::Empty; // Remove weapon from map
+            player.x = target_x;
+            player.y = target_y;
         },
         Tile::Monster => {
             if player.has_weapon {
-                println!("You slain The Monster!");
-                map[target] = Tile::Empty;
-                player.position = target;
+                println!("You killed the monster!");
+                map[target_y][target_x] = Tile::Empty; // Remove monster from map
+                player.x = target_x;
+                player.y = target_y;
             } else {
                 player.health_point -= 1;
                 println!("You've taken damage!");
             }
         },
+        Tile::Trap => {
+            println!("IT'S A TRAP! The floor collapsed. (You lost 2 HP)");
+            player.health_point -= 2;
+            map[target_y][target_x] = Tile::Empty; // Trap is triggered and gone
+            player.x = target_x;
+            player.y = target_y;
+        },
     };
 
+    // Lose Condition
     if player.health_point <= 0 {
-        println!("Game Over! You died.");
+        println!("Game Over! You died inside the dark labyrinth...");
         break;
-    }
+        }
 
-    if player.position == map.len() -1 {
-        println!("You managed to escape the labyrinth!");
+    // Win Condition (Exit is at x:9, y:8)
+    if player.x == 9 && player.y == 8  {
+        println!("VICTORY! You escape the labyrinth");
         break;
-    }
+        }
 
     }
 
 }    
 
+// Helper Function for user input
 fn get_input(prompt: &str) -> String {
     println!("{}", prompt);
     let mut buffer = String::new();
