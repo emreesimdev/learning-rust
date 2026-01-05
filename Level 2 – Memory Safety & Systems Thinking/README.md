@@ -15,3 +15,7 @@ This level focuses on Rust's memory management system.
 ### 3. The Text Cutter (03_mutable_references)
 - Concept: Modifying data through references.
 - Key Takeaway: Using Mutable References (&mut) to modify data in-place without cloning.
+
+### 4. Slices Logic (04_slices)
+- Concept: Accessing partial data without copying.
+- Key Takeaway: Using String Slices (&str) and range syntax to view specific parts of memory.
