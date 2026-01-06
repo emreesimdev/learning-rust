@@ -19,3 +19,7 @@ This level focuses on Rust's memory management system.
 ### 4. Slices Logic (04_slices)
 - Concept: Accessing partial data without copying.
 - Key Takeaway: Using String Slices (&str) and range syntax to view specific parts of memory.
+
+### 5. The Package Builder (05_structs)
+- Concept: Grouping related data and adding behavior.
+- Key Takeaway: Using `struct` for data layout and `impl` blocks to define methods and constructors.
