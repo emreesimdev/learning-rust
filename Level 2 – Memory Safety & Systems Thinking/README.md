@@ -23,3 +23,7 @@ This level focuses on Rust's memory management system.
 ### 5. The Package Builder (05_structs)
 - Concept: Grouping related data and adding behavior.
 - Key Takeaway: Using `struct` for data layout and `impl` blocks to define methods and constructors.
+
+### 6. RPG Class System (06_rpg_class)
+- Concept: Combining Structs and Enums.
+- Key Takeaway: Using `match` to handle different behaviors based on the Enum variant stored inside a Struct.
