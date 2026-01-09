@@ -35,3 +35,7 @@ This level focuses on Rust's memory management system.
 ### 8. The Log Collector (08_log_collector)
 - Concept: Managing lists of data (Vectors).
 - Key Takeaway: Using `Vec::push` to store multiple items and `for` loops to iterate through them.
+
+### 9. The Voting Machine (09_voting_machine)
+- Concept: Interactive Input and Data Manipulation.
+- Key Takeaway: Taking user input with `std::io`, looping with `loop/break`, and finding/modifying specific items inside a Vector.
