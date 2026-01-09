@@ -31,3 +31,7 @@ This level focuses on Rust's memory management system.
 ### 7. Bank Account Logic (07_bank_account)
 - Concept: State management and Logic.
 - Key Takeaway: Using `&mut self` to modify data and `if/else` inside methods to prevent invalid operations (like negative balance).
+
+### 8. The Log Collector (08_log_collector)
+- Concept: Managing lists of data (Vectors).
+- Key Takeaway: Using `Vec::push` to store multiple items and `for` loops to iterate through them.
