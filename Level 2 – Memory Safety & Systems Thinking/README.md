@@ -39,3 +39,7 @@ This level focuses on Rust's memory management system.
 ### 9. The Voting Machine (09_voting_machine)
 - Concept: Interactive Input and Data Manipulation.
 - Key Takeaway: Taking user input with `std::io`, looping with `loop/break`, and finding/modifying specific items inside a Vector.
+
+### 10. Student Registry (10_student_registry)
+- Concept: Nested Structs and Data Management.
+- Key Takeaway: Building a system where one Struct (`Classroom`) holds and manages a Vector of another Struct (`Student`).
