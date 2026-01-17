@@ -1,6 +1,40 @@
-[package]
-name = "learning-rust"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+resolver = "2"
 
-[dependencies]
+members = [
+    "playground",
+
+    # --- LEVEL 1 ---
+    "Level_1/01_hello_world",
+    "Level_1/02_basic_types",
+    "Level_1/03_math_operations",
+    "Level_1/04_control_flow",
+    "Level_1/05_loops",
+    "Level_1/06_user_input",
+    "Level_1/07_guessing_game",
+    "Level_1/08_unit_converter",
+    "Level_1/09_atm_simulator",
+    "Level_1/10_dungeon_battle",
+    "Level_1/11_mars_survival",
+    "Level_1/12_warehouse_manager",
+    "Level_1/13_crypto_trader",
+    "Level_1/14_structs_and_enums",
+    "Level_1/15_vectors_intro",
+    "Level_1/16_vectors_deep_dive",
+    "Level_1/17_personal_library",
+    "Level_1/18_order_manager",
+    "Level_1/19_rpg_inventory",
+    "Level_1/20_labyrinth",
+
+    # --- LEVEL 2 ---
+    "Level_2/01_ownership_intro",
+    "Level_2/02_mutability",
+    "Level_2/03_mutable_references",
+    "Level_2/04_slices",
+    "Level_2/05_structs",
+    "Level_2/06_rpg_class",
+    "Level_2/07_bank_account",
+    "Level_2/08_log_collector",
+    "Level_2/09_voting_machine",
+    "Level_2/10_student_registry",
+]
