@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, this is my learning jouney.");
+    println!("Hello, this is my learning journey.");
 }
