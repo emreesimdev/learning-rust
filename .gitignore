@@ -3,3 +3,7 @@
 
 # Ignore backup files if any
 **/*.rs.bk
+
+# Added by cargo
+
+/target
